@@ -1,17 +1,17 @@
 ﻿@echo off
 chcp 65001 >nul
 cd /d "%~dp0"
-echo Vikunja を起動しています...
+echo Starting Vikunja...
 docker compose up -d
 if errorlevel 1 (
     echo.
-    echo 起動に失敗しました。Docker Desktop が起動しているか確認してください。
+    echo Failed to start. Make sure Docker Desktop is running.
     pause
     exit /b 1
 )
 echo.
-echo 起動しました: http://localhost:3456
-echo 初回はデータベースの準備に数十秒かかることがあります。
+echo Started: http://localhost:3456
+echo On first start, database setup may take tens of seconds.
 start "" "http://localhost:3456"
 echo.
 pause

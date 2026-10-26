@@ -1,15 +1,15 @@
 ﻿@echo off
 chcp 65001 >nul
 cd /d "%~dp0"
-echo Vikunja を停止しています...
+echo Stopping Vikunja...
 docker compose down
 if errorlevel 1 (
     echo.
-    echo 停止に失敗しました。
+    echo Failed to stop.
     pause
     exit /b 1
 )
 echo.
-echo 停止しました。データ（files と db）はそのまま残しています。
+echo Stopped. Data in files and db was left in place.
 echo.
 pause
